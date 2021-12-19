@@ -6,13 +6,29 @@
                     <div class="card-header">{{ __('Product') }}</div>
 
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <label for="tableLength">
+                                    Show
+                                    <select wire:model="paginate" name="tableLength" id="tableLength"
+                                            class="form-control form-control-sm w-auto"
+                                            aria-label="Default select example">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                </label>
+                            </div>
+                            
+
+                        </div>
+                        <hr>
                         <table class="table">
-
-
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Titlte</th>
+                                <th scope="col">Title</th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
                             </tr>
