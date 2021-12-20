@@ -3,13 +3,14 @@
         @if($formVisible)
             <livewire:product.create/>
         @endif
-        @if(session()->has('message'))
-            <div class="alert alert-success" role="alert">
-                {{ session('message') }}
-            </div
-        @endif
+
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @if(session()->has('message'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('message') }}
+                    </div
+                @endif
                 <div class="card">
                     <div class="card-header">{{ __('Product') }}
                         <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>

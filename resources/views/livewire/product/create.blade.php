@@ -48,15 +48,16 @@
                             <label for="image">Image</label>
                             <input wire:model="image" type="file" class="form-control" id="image"
                                    aria-label="image">
+                            @if ($image)
+                                <img
+                                    src="{{ empty(!$image) ?  $image->temporaryUrl() : asset("storage/public/{$image}") }}"
+                                    alt="" height="200">
+                            @endif
                             @error('image')
-                            <span class="invalid-feedback">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                             @enderror
 
-                            @if ($image)
-                                <img src="{{ $image->temporaryUrl() }}" alt="" height="200">
-                            @endif
+
                         </div>
                     </div>
 
