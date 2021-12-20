@@ -20,7 +20,13 @@
                                     </select>
                                 </label>
                             </div>
-                            
+                            <div class="col">
+                                <label for="search">
+                                    <input type="text" wire:model="search" id="search"
+                                           class="form-control form-control-sm"
+                                           placeholder="Search">
+                                </label>
+                            </div>
 
                         </div>
                         <hr>
