@@ -19,7 +19,8 @@ class Index extends Component
 
     //$listener formClose = untuk emit di create.blade untuk menutup form create
     protected $listeners = [
-        'formClose' => 'formCloseHandler'
+        'formClose' => 'formCloseHandler',
+        'productStored' => 'productStoredHandler'
     ];
 
 
@@ -40,6 +41,12 @@ class Index extends Component
 
     //method ini akan dipanggil di $listener
     public function formCloseHandler()
+    {
+        $this->formVisible = false;
+
+    }
+
+    public function productStoredHandler()
     {
         $this->formVisible = false;
 

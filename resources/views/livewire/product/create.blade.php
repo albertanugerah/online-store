@@ -32,7 +32,6 @@
 
                     <div class="col-12">
                         <label for="description" class="form-label">Description</label>
-
                         <input wire:model="description" type="text"
                                class="form-control @error('description') is-invalid @enderror"
                                placeholder="Description" aria-label="description">
@@ -55,9 +54,9 @@
                                     </span>
                             @enderror
 
-                            {{--                                    @if ($image)--}}
-                            {{--                                        <img src="{{ $image->temporaryUrl() }}" alt="" height="200">--}}
-                            {{--                                    @endif--}}
+                            @if ($image)
+                                <img src="{{ $image->temporaryUrl() }}" alt="" height="200">
+                            @endif
                         </div>
                     </div>
 

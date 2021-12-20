@@ -13,24 +13,21 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <label for="tableLength">
-                                    Show
-                                    <select wire:model="paginate" name="tableLength" id="tableLength"
-                                            class="form-control form-control-sm w-auto"
-                                            aria-label="Default select example">
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                        <option value="20">20</option>
-                                    </select>
-                                </label>
+                                <select wire:model="paginate" name="tableLength" id="tableLength"
+                                        class="form-select form-select-sm w-auto"
+                                        aria-label="Show length">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+
                             </div>
                             <div class="col">
-                                <label for="search">
-                                    <input type="text" wire:model="search" id="search"
-                                           class="form-control form-control-sm"
-                                           placeholder="Search">
-                                </label>
+                                <input type="text" wire:model="search" id="search"
+                                       class="form-control form-control-sm"
+                                       placeholder="Search" aria-label="search">
+
                             </div>
 
                         </div>
