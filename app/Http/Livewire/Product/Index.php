@@ -12,8 +12,16 @@ class Index extends Component
 
     public $paginate = 10;
     public $search;
+    public $formVisible;
+
     protected $paginationTheme = 'bootstrap';
-    protected $updatesQueryString = ['search'];
+    protected $queryString = ['search'];
+
+    //$listener formClose = untuk emit di create.blade untuk menutup form create
+    protected $listeners = [
+        'formClose' => 'formCloseHandler'
+    ];
+
 
     //method mount = method construct
     public function mount()
@@ -28,5 +36,12 @@ class Index extends Component
                 Product::latest()->paginate($this->paginate) :
                 Product::latest()->where('title', 'like', "%{$this->search}%")->paginate($this->paginate)
         ])->extends('layouts.app');
+    }
+
+    //method ini akan dipanggil di $listener
+    public function formCloseHandler()
+    {
+        $this->formVisible = false;
+
     }
 }
