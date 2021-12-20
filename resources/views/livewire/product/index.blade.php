@@ -3,6 +3,11 @@
         @if($formVisible)
             <livewire:product.create/>
         @endif
+        @if(session()->has('message'))
+            <div class="alert alert-success" role="alert">
+                {{ session('message') }}
+            </div
+        @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -11,6 +16,7 @@
                     </div>
 
                     <div class="card-body">
+
                         <div class="row">
                             <div class="col">
                                 <select wire:model="paginate" name="tableLength" id="tableLength"
